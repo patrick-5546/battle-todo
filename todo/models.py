@@ -9,9 +9,10 @@ class Todo(models.Model):
         return 'Primary Key: {}'.format(self.pk)
 
 class Task(models.Model):
+    todo_list = models.ForeignKey(Todo, on_delete=models.CASCADE)
     task_name = models.CharField(max_length=200)
     completion_status = models.BooleanField(default=False)
-    todo_list = models.ForeignKey(Todo, on_delete=models.CASCADE)
+    task_description = models.TextField(blank=True)
 
     def __str__(self):
         return self.task_name
