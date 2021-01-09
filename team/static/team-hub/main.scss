@@ -1,0 +1,38 @@
+// Baseline stylesheet, loaded into all pages. 
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@600&display=swap');
+
+$Base-colour: #120204;
+$Nav-colour: #EF6C7B;
+$Card-shade: #250408;
+$Head-font: 'Open Sans', sans-serif;
+$Body-font: 'Comforta', sans-serif;
+
+
+body {
+    background-color: $Base-colour;
+    color: white;
+    font-family: $Body-font;
+
+    & h1 {
+        font-family: $Head-font;
+    }
+}
+
+#navbar {
+    background-color: $Nav-colour;
+    color: white;
+
+    & a {
+        text-decoration: none;
+        transition-property: color;
+        transition-duration: 300ms;
+    }
+
+    & a:hover {
+        color: #8EB5CD;
+    }
+    
+    & a:active {
+        color: white;
+    }
+}
