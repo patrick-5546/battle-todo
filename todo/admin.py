@@ -2,8 +2,12 @@ from django.contrib import admin
 
 from .models import Todo, Task
 
-# Register your models here.
+class TaskInline(admin.StackedInline):
+    model = Task
+    extra = 5
 
-admin.site.register(Todo)
-admin.site.register(Task)
+class TodoAdmin(admin.ModelAdmin):
+    inlines = [TaskInline]
+    search_fields = ['user']
 
+admin.site.register(Todo, TodoAdmin)
