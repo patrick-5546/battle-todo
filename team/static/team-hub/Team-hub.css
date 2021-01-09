@@ -1,1 +1,14 @@
-/* No CSS *//*# sourceMappingURL=Team-hub.css.map */
+body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1fr;
+  -ms-grid-rows: 9fr 1fr;
+      grid-template-rows: 9fr 1fr;
+}
+
+.Team-box {
+  display: -ms-grid;
+  display: grid;
+}
+/*# sourceMappingURL=Team-hub.css.map */
