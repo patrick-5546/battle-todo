@@ -8,5 +8,6 @@ app_name = 'todo'  # setting application namespace
 # DetailView expects primary key value to be called pk
 urlpatterns = [
     path('', views.login_page, name='login'),
+    path('todo/', views.todo_page, name='todo'),
     path('<int:pk>/todo', views.DetailView.as_view(), name='todo'),
 ]
