@@ -1,9 +1,10 @@
 from django.db import models
 
-from ..team.models import Player
+from team.models import Player
 
 class Todo(models.Model):
     user = models.OneToOneField(Player, on_delete=models.CASCADE, primary_key=True)
+    
     def __str__(self):
         return 'Primary Key: {}'.format(self.pk)
 
