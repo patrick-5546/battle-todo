@@ -47,6 +47,10 @@ html {
   background: #303030;
 }
 
+.Skill-info h1 {
+  text-align: center;
+}
+
 .Skill-info p, .Skill-info h1, .Skill-info h2 {
   padding: 20px;
   margin: none;
@@ -64,15 +68,15 @@ html {
   -ms-grid-column: span 3;
       grid-column-start: span 3;
   margin-top: 200px;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
 }
 
 .Team-box {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 50px;
   padding: 50px;
 }
 
@@ -85,11 +89,14 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 15%;
+  -webkit-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .Team-box .Teammate-card h1 {
-  margin-left: 2vw;
+  text-align: center;
   font-family: "Open Sans", sans-serif;
+  font-size: 3em;
   border-bottom: 2px solid;
 }
 
@@ -116,12 +123,6 @@ html {
   margin-right: 25px;
 }
 
-@media (max-width: 1120px) {
-  .container h1 {
-    margin-left: 10vw;
-  }
-}
-
 .Leaderboards {
   display: -ms-grid;
   display: grid;
@@ -129,6 +130,7 @@ html {
       grid-template-columns: 1fr;
   -ms-grid-rows: 2fr (1fr)[10];
       grid-template-rows: 2fr repeat(10, 1fr);
+  background: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
   border: 3px solid;
   border-color: white;
   padding: 25px;
