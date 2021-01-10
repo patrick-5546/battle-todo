@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.views import generic
+from django.contrib.auth.forms import UserCreationForm
 
 from .models import Todo, Task
 from .forms import TaskForm
@@ -9,6 +10,19 @@ def login_page(request):
     template = 'todo/login_page.html'
 
     return render(request, template)
+
+def registerPage(request):
+    form = UserCreationForm()
+    template = 'todo/register_page.html'
+
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    context = {'form': form}
+
+    return render(request, template, context)
 
 
 class DetailView(generic.DetailView):
