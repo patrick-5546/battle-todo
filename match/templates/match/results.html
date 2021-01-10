@@ -1,7 +1,12 @@
+{% extends 'team/Base.html' %}
+
+{% load static %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html>
 
-{% load static %}
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'match/results.css' %}">
 </head>
@@ -70,56 +75,56 @@
 </div>
 
 <div class="team team-2">
-    <div class="column">
+    <div class="column2">
         <span class="section">Team 2</span>
         {% for player in team2list %}
         <span class="info">{{ player.player_name }}</span>
         {% endfor %}
     </div>
 
-    <div class="column">
+    <div class="column2">
         <span class="section">Physical Attack</span>
         {% for player in team2list %}
         <span class="info">{{ player.physical_attack }}</span>
         {% endfor %}
     </div>
 
-    <div class="column">
+    <div class="column2">
         <span class="section">Physical Defense</span>
         {% for player in team2list %}
         <span class="info">{{ player.physical_defense }}</span>
         {% endfor %}
     </div>
 
-    <div class="column">
+    <div class="column2">
         <span class="section">Special Attack</span>
         {% for player in team2list %}
         <span class="info">{{ player.special_attack }}</span>
         {% endfor %}
     </div>
 
-    <div class="column">
+    <div class="column2">
         <span class="section">Special Defense</span>
         {% for player in team2list %}
         <span class="info">{{ player.special_defense }}</span>
         {% endfor %}
     </div>
 
-    <div class="column">
+    <div class="column2">
         <span class="section">Speed</span>
         {% for player in team2list %}
         <span class="info">{{ player.speed }}</span>
         {% endfor %}
     </div>
 
-    <div class="column">
+    <div class="column2">
         <span class="section">Damage Dealt</span>
         {% for player in team2list %}
         <span class="info">{{ player.damage_dealt }}</span>
         {% endfor %}
     </div>
 
-    <div class="column">
+    <div class="column2">
         <span class="section">Overall</span>
         <span class="info">Total Damage Dealt: {{ team2damage }}</span>
         <span class="info">Remaining HP: {{ team2hp }}</span>
@@ -129,3 +134,4 @@
 
 </html>
 
+{% endblock %}

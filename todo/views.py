@@ -3,16 +3,27 @@ from django.views import generic
 
 from .models import Todo, Task
 
+from team.models import *
 
 def login_page(request):
     template = 'todo/login_page.html'
 
     return render(request, template)
 
-def registerPage(request):
-    template = 'todo/register_page.html'
+def redirectTodo(request):
+    if request.method == 'POST':
+        player_name = request.POST.get('username')
 
-    return render(request, template)
+        try:
+            player = Player.objects.get(player_name=player_name)
+
+        except Player.DoesNotExist:
+            print('no valid player found')
+            
+    else:
+        print('failed attempt')
+    
+    return redirect('todo:todo', pk=player.pk)
 
 
 class DetailView(generic.DetailView):
@@ -28,6 +39,7 @@ class DetailView(generic.DetailView):
         for task in context['tasks']:
             if task.completion_status == True:
                 context['todopoints'] += 5
+        Todo.player.todo_points = context['todopoints']
         return context
 
 def search(request, pk):

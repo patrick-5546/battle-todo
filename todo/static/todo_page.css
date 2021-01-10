@@ -16,14 +16,15 @@
     background-color: #2d3039;
     padding-top: 20px;
     border-top: 3px solid rgb(126, 126, 126);
-    border-bottom: 3px solid #717beb;
+    border-bottom: 3px solid #2d3039;
 }
 
 .task {
     background: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
     padding-top: 35px;
-    border-top: 3px solid #717beb;
-    border-bottom: 3px solid #717beb;
+    border-top: 3px solid #d8d8d8;
+    border-bottom: 3px solid #d8d8d8;
+    color: white;
 }
 
 .points {
@@ -34,4 +35,8 @@
 
 .taskname {
     margin-right: 38px;
+}
+
+.complete {
+    margin-left: 45px;
 }

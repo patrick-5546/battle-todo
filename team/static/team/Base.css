@@ -28,7 +28,7 @@ body h1 {
   margin: none;
   padding: none;
   overflow: hidden;
-  background: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
+  background-color: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
 }
 
 #navbar li {
