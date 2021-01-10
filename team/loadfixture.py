@@ -189,7 +189,7 @@ team_fixtures = [
         'pk': 1,
         'fields': {
             'team_name': 'team_1',
-            'team_points': 0
+            'team_points': 21
         }
     },
     {
@@ -197,7 +197,7 @@ team_fixtures = [
         'pk': 2,
         'fields': {
             'team_name': 'team_2',
-            'team_points': 0
+            'team_points': 42
         }
     } 
 ]

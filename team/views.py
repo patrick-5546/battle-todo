@@ -19,13 +19,16 @@ class DetailView(generic.DetailView):
         # Add in a QuerySet of all the books
         context['team_players'] = Player.objects.filter(
             player_team=Team.objects.get(pk=self.object.pk))
-        context['player_leaderboards'] = Player.objects.order_by('')
+        context['player_leaderboards'] = Player.objects.order_by('-player_points')[:10]
+        context['team_leaderboards'] = Team.objects.order_by('-team_points')[:10]
         return context
 
 def find(request, pk):
     if request.method == 'POST':
         player = Player.objects.get(pk=pk)
         todo_points = player.todo_points
+        cool = request.POST.get('select')
+        player_special_select = True if cool == 'special' else False
 
         physical_attack = int(request.POST.get(
             'physical_attack')) - player.physical_attack
@@ -47,6 +50,7 @@ def find(request, pk):
             player.special_defense += special_defense
             player.speed += speed
             player.todo_points -= sum_dif
+            player.player_special_select = player_special_select
             player.save()
 
     else:
