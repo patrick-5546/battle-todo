@@ -4,7 +4,7 @@ from .models import Todo, Task
 
 class TaskInline(admin.StackedInline):
     model = Task
-    extra = 5
+    extra = 1
 
 class TodoAdmin(admin.ModelAdmin):
     inlines = [TaskInline]
