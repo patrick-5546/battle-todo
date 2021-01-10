@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.views import generic
 
 from .models import Todo, Task
+from team.models import Team, Player
 
 
 def login_page(request):
@@ -28,6 +29,7 @@ class DetailView(generic.DetailView):
         for task in context['tasks']:
             if task.completion_status == True:
                 context['todopoints'] += 5
+        Todo.player.todo_points = context['todopoints']
         return context
 
 def search(request, pk):

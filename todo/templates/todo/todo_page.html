@@ -40,7 +40,7 @@
           <input type="submit" value="Edit Task"><br><br>
         </form>
         <form action="/{{todo.pk}}/search/" method="post">{% csrf_token %}
-          <input type="submit" value="Complete Task: {{ task.task_name }}" name="completion_status">
+          <input class="complete" type="submit" value="Complete Task: {{ task.task_name }}" name="completion_status">
           {% if task.completion_status %}
             <p>Completed</p>
           {% else %}
