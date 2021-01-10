@@ -56,55 +56,33 @@
     <div class="Team-box">
         <!--Players-->
         {% for player in team_players %}
-            <div class="Teammate-card">
-                
-                <div><h1>Player: {{ player.player_name }}</h1></div>
-                <div><h2>Player Points: {{ player.player_points }}</h2></div>
-                <div><h3>Todo Points: {{ player.todo_points }}</h3></div>
+        <div class="Teammate-card grow">
 
-                <div>    
-                <form action="/teams/{{todo.pk}}/search/" method="post">{% csrf_token %}
-                        <!-- <label for="player_special_select">Task Name: </label>
-                        <input id="player_special_select" type="checkbox" name="player_special_select"><br> -->
-                        <label for="damage_dealt">Task Description: </label>
-                        <input id="damage_dealt" type="number" name="damage_dealt" value="{{ player.damage_dealt }}">
-                        <input type="submit" value="Edit Task"><br><br>
-                    </form>
-                </div>
-                
-                <div>
-                    <form action="/teams/{{todo.pk}}/search/" method="post">{% csrf_token %}         
-                        <label for="physical_attack">Physical Attack: {{ player.physical_attack }}</label>
-                        <input type="number" id="physical_attack" name="physical_attack" min="0" max="{{player.todo_points}}" placerholder="0-{{player.todo_points}}">
-                    </form>
-                </div>
-                <div>Physical Attack: {{ player.physical_attack }} <button type="button"> &#43; </button></div>
-                <div>Physical Defense: {{ player.physical_defense }} <button type="button"> &#43; </button></div>
-                <div>Special Attack: {{ player.special_attack }} <button type="button"> &#43; </button></div>
-                <div>Special Resistance: {{ player.special_defense }} <button type="button"> &#43; </button></div>
-                <div>Agility: {{ player.speed }} <button type="button"> &#43; </button></div>
+            <div>
+                <h1>Player: {{ player.player_name }}</h1>
             </div>
+            <div>
+                <h3>Player Points: {{ player.player_points }}</h3>
+            </div>
+            <div>
+                <h3>Todo Points: {{ player.todo_points }}</h3>
+            </div>
+
+            <div>
+                <form action="/teams/{{todo.pk}}/search/" method="post">{% csrf_token %}
+                    <label for="physical_attack">Physical Attack: {{ player.physical_attack }}</label>
+                    <input type="number" id="physical_attack" name="physical_attack" min="0"
+                        max="{{player.todo_points}}" placerholder="0-{{player.todo_points}}">
+                </form>
+            </div>
+            <div>Physical Attack: {{ player.physical_attack }} <button type="button"> &#43; </button></div>
+            <div>Physical Defense: {{ player.physical_defense }} <button type="button"> &#43; </button></div>
+            <div>Special Attack: {{ player.special_attack }} <button type="button"> &#43; </button></div>
+            <div>Special Resistance: {{ player.special_defense }} <button type="button"> &#43; </button></div>
+            <div>Agility: {{ player.speed }} <button type="button"> &#43; </button></div>
+        </div>
         {% endfor %}
     </div>
-
-</div>
-
-<div class="InvestSkill">
-    <h1>Invest your hard-earned points!</h1>
-
-    <form action="/returnpage.php">
-        <label for="players">Choose Player to invest in: </label>
-        <select name="players" id="players">
-            {% for player in team_players %}
-            <option value="Blarg">{{ player.player_name }}</option>
-            {% endfor %}
-        </select>
-        <input type="submit" value="Submit">
-        <label for="skillpoints">Choose points</label>
-        <input type="number" id="skillpoints" name="skillpoints" min="1" max="20" placeholder="points">
-        Points invested will not be returned, Choose wisely.
-    </form>
-
 
 </div>
 
