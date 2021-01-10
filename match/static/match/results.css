@@ -1,0 +1,27 @@
+.team {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    justify-items: center;
+}
+
+.team-1 {
+    background-color: lightblue;
+}
+
+.team-2 {
+    background-color: orange;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.section {
+    margin-bottom: 50px;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'match/results.css' %}">
+</head>
+
+<div class="team team-1">
+    <div class="column">
+        <span class="section">Team 1</span>
+        {% for player in team1list %}
+        <span class="section">{{ player.player_name }}</span>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        <span class="section">Physical Attack</span>
+        {% for player in team1list %}
+        <span class="section">{{ player.physical_attack }}</span>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        <span class="section">Physical Defense</span>
+        {% for player in team1list %}
+        <span class="section">{{ player.physical_defense }}</span>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        <span class="section">Special Attack</span>
+        {% for player in team1list %}
+        <span class="section">{{ player.special_attack }}</span>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        <span class="section">Special Defense</span>
+        {% for player in team1list %}
+        <span class="section">{{ player.special_defense }}</span>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        <span class="section">Speed</span>
+        {% for player in team1list %}
+        <span class="section">{{ player.speed }}</span>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        <span class="section">Damage Dealt</span>
+        {% for player in team1list %}
+        <span class="section">{{ player.damage_dealt }}</span>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="team team-2">
+    <div class="column">
+        <span class="section">Team 2</span>
+        {% for player in team2list %}
+        <span class="section">{{ player.player_name }}</span>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        <span class="section">Physical Attack</span>
+        {% for player in team2list %}
+        <span class="section">{{ player.physical_attack }}</span>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        <span class="section">Physical Defense</span>
+        {% for player in team2list %}
+        <span class="section">{{ player.physical_defense }}</span>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        <span class="section">Special Attack</span>
+        {% for player in team2list %}
+        <span class="section">{{ player.special_attack }}</span>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        <span class="section">Special Defense</span>
+        {% for player in team2list %}
+        <span class="section">{{ player.special_defense }}</span>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        <span class="section">Speed</span>
+        {% for player in team2list %}
+        <span class="section">{{ player.speed }}</span>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        <span class="section">Damage Dealt</span>
+        {% for player in team2list %}
+        <span class="section">{{ player.damage_dealt }}</span>
+        {% endfor %}
+    </div>
+</div>
+
+</html>
+
