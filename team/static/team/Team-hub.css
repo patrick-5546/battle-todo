@@ -94,10 +94,26 @@ html {
   border-bottom: 2px solid;
 }
 
-.Team-box .Teammate-card > div {
-  text-align: left;
+.Team-box .Teammate-card h3 {
+  margin: none;
+  padding: none;
+  margin-left: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.Team-box .Teammate-card .stat-field {
+  margin-bottom: 5px;
   margin-left: 25px;
   padding-bottom: 20px;
+  text-align: left;
+}
+
+.Team-box .Teammate-card .stat-field input {
+  text-align: right;
+  -ms-flex-line-pack: right;
+      align-content: right;
+  float: right;
+  margin-right: 25px;
 }
 
 .Leaderboards {

@@ -59,7 +59,7 @@
         <div class="Teammate-card grow">
 
             <div>
-                <h1>Player: {{ player.player_name }}</h1>
+                <h1>{{ player.player_name }}<h1>
             </div>
             <div>
                 <h3>Player Points: {{ player.player_points }}</h3>
@@ -69,21 +69,47 @@
             </div>
 
             <div>
-                <form action="/teams/{{todo.pk}}/search/" method="post">{% csrf_token %}
-                    <label for="physical_attack">Physical Attack: {{ player.physical_attack }}</label>
-                    <input type="number" id="physical_attack" name="physical_attack" min="0"
-                        max="{{player.todo_points}}" placerholder="0-{{player.todo_points}}">
+                <form action="/team/{{player.pk}}/find/" method="post">{% csrf_token %}
+
+                    <div class="stat-field">
+                        <label for="physical_attack">Physical Attack: </label>
+                        <input id="physical_attack" type="number" name="physical_attack" min="0" max="10"
+                            value="{{ player.physical_attack}}">
+                    </div>
+                    <div class="stat-field">
+                        <label for="physical_defense">Physical Defense: </label>
+                        <input id="physical_defense" type="number" name="physical_defense" min="0" max="10"
+                            value="{{ player.physical_defense}}">
+                    </div>
+                    <div class="stat-field">
+                        <label for="special_attack">Special Attack: </label>
+                        <input id="special_attack" type="number" name="special_attack" min="0" max="10"
+                            value="{{ player.special_attack}}">
+                    </div>
+                    <div class="stat-field">
+                        <label for="special_defense">Special Defense: </label>
+                        <input id="special_defense" type="number" name="special_defense" min="0" max="10"
+                            value="{{ player.special_defense}}">
+                    </div>
+                    <div class="stat-field">
+                        <label for="speed">Speed: </label>
+                        <input id="speed" type="number" name="speed" min="0" max="10" value="{{ player.speed}}">
+                    </div>
+                    <div class="stat-field">
+                        <label for="player_special_select">Physical Attack</label>
+                        <input id="player_special_select" type="radio" name="player_special_select_yes"
+                            value="{{ player.physiscala_Aattack }}">
+                        <label for="player_special_select">Special Attack</label>
+                        <input id="player_special_select" type="radio" name="player_special_select_yes"
+                            value="{{ player.special_attack }}">
+                    </div>
+                    <div style="text-align: center;"><input type="submit" value="Update"><br><br> </div>
+                </form>
                 </form>
             </div>
-            <div>Physical Attack: {{ player.physical_attack }} <button type="button"> &#43; </button></div>
-            <div>Physical Defense: {{ player.physical_defense }} <button type="button"> &#43; </button></div>
-            <div>Special Attack: {{ player.special_attack }} <button type="button"> &#43; </button></div>
-            <div>Special Resistance: {{ player.special_defense }} <button type="button"> &#43; </button></div>
-            <div>Agility: {{ player.speed }} <button type="button"> &#43; </button></div>
         </div>
         {% endfor %}
     </div>
-
 </div>
 
 {% endblock %}

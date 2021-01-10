@@ -88,10 +88,26 @@ html {
             font-family: $Head-font;
             border-bottom: 2px solid;
         }
-        & > div {
-            text-align: left;
+
+        & h3 {
+            margin:none;
+            padding: none;
+            margin-left: 20px;
+            font-family: $Head-font;
+        }
+        & .stat-field {
+            margin-bottom: 5px;
             margin-left: 25px;
             padding-bottom: 20px;
+            text-align: left;
+        }
+
+        & .stat-field input {
+            border: none;
+            text-align: right;
+            align-content: right;
+            float: right;
+            margin-right: 25px;
         }
     }
 }
