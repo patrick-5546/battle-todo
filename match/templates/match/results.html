@@ -5,7 +5,11 @@
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'match/results.css' %}">
 </head>
-
+{% if winner == True %}
+<div class="winner">Team 1 Won!</div>
+{% else %}
+<div class="winner">Team 2 Won!</div>
+{% endif %}
 <div class="team team-1">
     <div class="column">
         <span class="section">Team 1</span>

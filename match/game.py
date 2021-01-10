@@ -25,7 +25,7 @@ def run(pk1, pk2):
     player10 = Player.objects.get(pk = 10)
     team1list = [player1, player2, player3, player4, player5]
     team2list = [player6, player7, player8, player9, player10]
-    playgame(team1, team2, team1list, team2list)
+    winner = playgame(team1, team2, team1list, team2list)
     player1.save()
     player2.save()
     player3.save()
@@ -38,6 +38,7 @@ def run(pk1, pk2):
     player10.save()
     team1.save()
     team2.save()
+    return winner
 
 def playgame(team1, team2, team1list, team2list):
     global team1PhysDefense
@@ -57,7 +58,20 @@ def playgame(team1, team2, team1list, team2list):
         currentattacker = determineattacker(team1list, team2list)
         attack(currentattacker, team1attacking)
         if checkwin(team1, team2, team1attacking):
-            return
+            if team1attacking == True:
+                return True
+            else: 
+                return False
+    
+    # win condition if no team knocks the other out
+    if team1HP > team2HP:
+        team1.team_points += 5
+        team2.team_points -= 5
+        return True
+    else:
+        team1.team_points -= 5
+        team2.team_points += 5
+        return False
     
 def determineattacker(team1, team2):
     global team1attacking
