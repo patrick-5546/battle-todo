@@ -5,7 +5,7 @@ class Team(models.Model):
     team_points = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.team_name
+        return self.team_name + ", pk={}".format(self.pk)
 
 class Player(models.Model):
     player_name = models.CharField(max_length=200)
@@ -19,4 +19,4 @@ class Player(models.Model):
     speed = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.player_name
+        return self.player_name + ", pk={}".format(self.pk)
