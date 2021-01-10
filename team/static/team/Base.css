@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@600&display=swap");
+body {
+  background-color: #000000;
+  color: white;
+  font-family: "Comforta", sans-serif;
+}
+
+body h1 {
+  font-family: "Open Sans", sans-serif, sans-serif;
+}
+
+#navbar {
+  background: #52057b;
+  min-width: 100%;
+}
+
+#navbar a:hover {
+  color: #8EB5CD;
+  background: white;
+}
+
+#navbar a:active {
+  color: white;
+}
+
+#navbar ul {
+  list-style-type: none;
+  margin: none;
+  padding: none;
+  overflow: hidden;
+  background-color: #52057b;
+}
+
+#navbar li {
+  float: left;
+  color: white;
+}
+
+#navbar li a {
+  display: block;
+  text-align: center;
+  padding: 12px 16px;
+  text-decoration: none;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+/*# sourceMappingURL=Base.css.map */

@@ -1,25 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@600&display=swap");
+@use './Colours';
 body {
+  background-color: #000000;
+  color: white;
+  margin: 0;
+  font-family: 'Comforta', sans-serif;
+}
+
+body h1 {
+  font-family: "Open Sans", sans-serif;
+}
+
+body #navbar {
+  background: #52057b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 3fr 1fr;
-      grid-template-columns: 3fr 1fr;
-  -ms-grid-rows: 9fr 1fr;
-      grid-template-rows: 9fr 1fr;
+  -ms-grid-columns: 2fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+  margin: 75px;
+}
+
+@media (max-width: 1120px) {
+  .container {
+    display: inline;
+    margin: 50px;
+  }
+  .container > .Team-box {
+    display: inline;
+  }
+}
+
+.Skill-info {
+  place-self: center;
+  width: 100%;
+  height: 100%;
+  background: #303030;
+}
+
+.Skill-info p, .Skill-info h1, .Skill-info h2 {
+  padding: 20px;
+  margin: none;
+}
+
+.container > .Team-box {
+  -ms-grid-column: span 3;
+      grid-column-start: span 3;
+}
+
+.Team-points {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-column: span 3;
+      grid-column-start: span 3;
+  margin-top: 200px;
+  margin-bottom: 100px;
 }
 
 .Team-box {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[auto-fill];
-      grid-template-columns: repeat(auto-fill, 1fr);
-  place-items: center;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.Teammate {
+.Team-box .Teammate-card {
+  min-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid;
+  border-color: White;
+}
+
+.Team-box .Teammate-card h1 {
+  margin-left: 2vw;
+  font-family: "Open Sans", sans-serif;
+  border-bottom: 2px solid;
+}
+
+.Team-box .Teammate-card > div {
+  text-align: left;
+  margin-left: 25px;
+  padding-bottom: 20px;
+}
+
+.Leaderboards {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 4fr 1fr 1fr 1fr;
-      grid-template-rows: 4fr 1fr 1fr 1fr;
-  padding: 10px;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 2fr (1fr)[10];
+      grid-template-rows: 2fr repeat(10, 1fr);
+  border: 3px solid;
+  border-color: white;
+  padding: 25px;
+}
+
+.Leaderboards h1, .Leaderboards p {
+  text-align: center;
+  padding: none;
+  margin: none;
+}
+
+.ignore {
+  display: contents;
 }
 /*# sourceMappingURL=Team-hub.css.map */
