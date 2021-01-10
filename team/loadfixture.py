@@ -1,5 +1,78 @@
 import json
 
+todo_fixtures = [
+    {
+        'model': 'todo.todo',
+        'pk': 1,
+        'fields': {
+            'player': 1,
+        }
+    },
+    {
+        'model': 'todo.todo',
+        'pk': 2,
+        'fields': {
+            'player': 2,
+        }
+    }, 
+    {
+        'model': 'todo.todo',
+        'pk': 3,
+        'fields': {
+            'player': 3,
+        }
+    },
+    {
+        'model': 'todo.todo',
+        'pk': 4,
+        'fields': {
+            'player': 4,
+        }
+    }, 
+    {
+        'model': 'todo.todo',
+        'pk': 5,
+        'fields': {
+            'player': 5,
+        }
+    },
+    {
+        'model': 'todo.todo',
+        'pk': 6,
+        'fields': {
+            'player': 6,
+        }
+    }, 
+    {
+        'model': 'todo.todo',
+        'pk': 7,
+        'fields': {
+            'player': 7,
+        }
+    },
+    {
+        'model': 'todo.todo',
+        'pk': 8,
+        'fields': {
+            'player': 8,
+        }
+    }, 
+    {
+        'model': 'todo.todo',
+        'pk': 9,
+        'fields': {
+            'player': 9,
+        }
+    },
+    {
+        'model': 'todo.todo',
+        'pk': 10,
+        'fields': {
+            'player': 10,
+        }
+    }
+]
+
 player_fixtures = [
     {
         'model': 'team.player',
@@ -203,4 +276,4 @@ team_fixtures = [
 ]
 
 with open('team/fixtures/fixtures.json', 'w') as outfile:
-    json.dump(team_fixtures + player_fixtures, outfile)
+    json.dump(todo_fixtures + team_fixtures + player_fixtures, outfile)
