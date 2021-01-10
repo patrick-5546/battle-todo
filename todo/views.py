@@ -24,6 +24,10 @@ class DetailView(generic.DetailView):
         context = super().get_context_data(**kwargs)
         context['tasks'] = Task.objects.filter(
             todo_list=Todo.objects.get(pk=self.object.pk))
+        context['todopoints'] = 0
+        for task in context['tasks']:
+            if task.completion_status == True:
+                context['todopoints'] += 5
         return context
 
 def search(request, pk):

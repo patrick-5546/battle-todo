@@ -1,18 +1,27 @@
-<!-- {% include 'team/main.html' %}  -->
+{% extends 'team/Base.html' %}
+
+{% load static %}
+
 {% block content %}
 
 <!DOCTYPE html>
 <html>
-  <head> </head>
+<head> 
+  <link rel="stylesheet" type="text/css" href="{% static 'todo_page.css' %}">
+</head>
 
   <body>
+    <div class="column">
     <header>
-      <h1>Todolist</h1>
+      <h1 class="title">Todolist</h1>
     </header>
-    <div>
+    <div class="points">Todo points: {{ todopoints }}</div>
+    <div class="addtask">
       <form action="/{{todo.pk}}/search/" method="post">{% csrf_token %}
+        <div class="taskname">
         <label for="task_name">Task Name: </label>
         <input id="task_name" type="text" name="task_name"><br>
+        </div>
         <label for="task_description">Task Description: </label>
         <input id="task_description" type="text" name="task_description">
         <input type="submit" value="Add Task"><br><br>
@@ -20,9 +29,12 @@
     </div>
     <div>
       {% for task in tasks %}
+      <div class="task">
         <form action="/{{todo.pk}}/search/" method="post">{% csrf_token %}
+          <div class="taskname">
           <label for="task_name">Task Name: </label>
           <input id="task_name" type="text" name="task_name" value="{{ task.task_name }}" readonly><br>
+          </div>
           <label for="task_description">Task Description: </label>
           <input id="task_description" type="text" name="task_description" value="{{ task.task_description }}">
           <input type="submit" value="Edit Task"><br><br>
@@ -35,9 +47,11 @@
             <p>Not Completed</p>
           {% endif %}<br><br>
         </form>
+      </div>
       {% endfor %}
     </div>
     <div>{{todo.user.player_name}}</div>
+  </div>
   </body>
 </html>
 
