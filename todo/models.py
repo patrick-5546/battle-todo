@@ -12,7 +12,6 @@ class Todo(models.Model):
 class Task(models.Model):
     todo_list = models.ForeignKey(Todo, on_delete=models.CASCADE)
     task_name = models.CharField(max_length=200)
-    task_description = models.TextField()
     completion_status = models.BooleanField(default=False)
     task_description = models.TextField(blank=True)
 
