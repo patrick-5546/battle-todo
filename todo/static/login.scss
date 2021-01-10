@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@600&display=swap%27');
 
-$Base-colour: #000000;
+$Base-colour: #ffffff;
 $Nav-colour: #52057b;
 $Card-shade: #272727;
 
@@ -12,6 +12,8 @@ body {
     background-color: $Base-colour;
     color: white;
     font-family: $Body-font;
+    background-image: url('login1.jpg');
+    background-size: cover;
 
     & h1 {
         font-family: $Head-font, sans-serif;
@@ -21,7 +23,13 @@ body {
 
 .container {
     height: 100%;
-    
+    width: 30%;
+    position: relative;
+    top: 300px;
+    left: 680px;
+    box-shadow: 0px 0px 8px 2px rgb(184, 184, 184);
+    border-radius: 30px;
+
 
     .login-form {
         background-color: white;
@@ -29,9 +37,11 @@ body {
         padding: 40px;
         max-width: 500px;
         margin: auto;
+        border-radius: 30px;
 
         .login-title {
             color: black;
+            text-align: center;
         }
     
         .login-container {
@@ -50,10 +60,11 @@ input[type=text] {
     border: 1px solid #ccc;
     box-sizing: border-box;
     border-radius: 20px;
+    outline: none;
   }
 
 button[type=submit] {
-    background-color: #2546da;
+    background: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -61,4 +72,5 @@ button[type=submit] {
     cursor: pointer;
     width: 100%;
     border-radius: 20px;
+    outline: none;
 }
