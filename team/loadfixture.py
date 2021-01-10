@@ -275,7 +275,7 @@ team_fixtures = [
     },
     {
         'model': 'team.team',
-        'pk': 1,
+        'pk': 3,
         'fields': {
             'team_name': 'We Love Rice',
             'team_points': 21
@@ -283,7 +283,7 @@ team_fixtures = [
     },
     {
         'model': 'team.team',
-        'pk': 2,
+        'pk': 4,
         'fields': {
             'team_name': 'Rice is Bae',
             'team_points': 56
@@ -291,7 +291,7 @@ team_fixtures = [
     },
     {
         'model': 'team.team',
-        'pk': 1,
+        'pk': 5,
         'fields': {
             'team_name': 'RCSS Pride',
             'team_points': 74
@@ -299,7 +299,7 @@ team_fixtures = [
     },
     {
         'model': 'team.team',
-        'pk': 2,
+        'pk': 6,
         'fields': {
             'team_name': 'Sleepy Nation',
             'team_points': 11
@@ -307,7 +307,7 @@ team_fixtures = [
     },
     {
         'model': 'team.team',
-        'pk': 1,
+        'pk': 7,
         'fields': {
             'team_name': 'TTPS',
             'team_points': 21
@@ -315,7 +315,7 @@ team_fixtures = [
     },
     {
         'model': 'team.team',
-        'pk': 2,
+        'pk': 8,
         'fields': {
             'team_name': 'How you doing?',
             'team_points': 82
@@ -323,7 +323,7 @@ team_fixtures = [
     },
     {
         'model': 'team.team',
-        'pk': 1,
+        'pk': 9,
         'fields': {
             'team_name': 'The Destroyers',
             'team_points': 51
@@ -331,7 +331,7 @@ team_fixtures = [
     },
     {
         'model': 'team.team',
-        'pk': 2,
+        'pk': 10,
         'fields': {
             'team_name': 'Wookieeeeee',
             'team_points': 23
