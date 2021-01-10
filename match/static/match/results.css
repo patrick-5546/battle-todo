@@ -1,0 +1,41 @@
+.winner {
+    font-size: 5em;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(151, 153, 47, 0.322);
+}
+
+.team {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    justify-items: center;
+}
+
+.team-1 {
+    background-color: rgb(95, 184, 214);
+}
+
+.team-2 {
+    background-color: rgb(197, 89, 89);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.section {
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.info {
+    font-size: medium;
+    margin-bottom: 35px;
+}
