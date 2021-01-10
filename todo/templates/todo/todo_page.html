@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head> 
-  
-  </head>
+  <head> </head>
 
   <body>
     <header>
       <h1>Todolist</h1>
     </header>
     <div>
-        <ul>
-          {% for task in tasks %}
-            <li>{{task.task_name}}: {{task.task_description}}</li> 
-          {% endfor %}
-        </ul>
+      <form method="post"> {% comment %} action="{%url 'todo:search' %}"> {% endcomment %}
+        {% csrf_token %}
+        Task: {{form.task_name}} 
+        Description: {{form.task_description}}
+        <input type="submit" name="make_task" />
+      </form>
     </div>
+
     <div>
-      
+      <ul>
+        {% for task in tasks %}
+        <li>{{task.task_name}}: {{task.task_description}}</li>
+        {% endfor %}
+      </ul>
     </div>
+    <div>{{todo.user.player_name}}</div>
   </body>
 </html>
