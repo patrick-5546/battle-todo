@@ -2,7 +2,7 @@
     font-size: 5em;
     font-weight: bold;
     text-align: center;
-    background-color: rgba(151, 153, 47, 0.322);
+    margin-bottom: 10px;
 }
 
 .team {
@@ -14,28 +14,63 @@
     justify-items: center;
 }
 
-.team-1 {
-    background-color: rgb(95, 184, 214);
-}
-
-.team-2 {
-    background-color: rgb(197, 89, 89);
-}
-
 .column {
     display: flex;
     flex-direction: column;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    color: white;
 }
 
+.column2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-right: 30px;
+    color: black;
+}
+
+.team-1 {
+    background: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
+}
+
+.team-2 {
+    background: linear-gradient(45deg, #c3d4bd 0%, #b1cca9 100%);
+}
+/* linear-gradient(45deg, #ffdab4 0%, #f5c99e 100%); */
 .section {
     font-size: large;
     font-weight: bold;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    text-align: center;
 }
 
 .info {
-    font-size: medium;
+    font-size: 1.25em;
     margin-bottom: 35px;
+    text-align: center;
 }
+
+.buttondiv {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+
+}
+.button {
+    background: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
+    color: white;
+    padding: 14px 20px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    width: 4.5%;
+    border-radius: 20px;
+}
+
+.button:hover {
+    color: #000000;
+    background: rgb(219, 219, 219);
+  }
