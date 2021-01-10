@@ -1,3 +1,6 @@
+<!-- {% include 'team/main.html' %}  -->
+{% block content %}
+
 <!DOCTYPE html>
 <html>
   <head> </head>
@@ -7,11 +10,35 @@
       <h1>Todolist</h1>
     </header>
     <div>
-        <ul>
-            <li>Test item 1</li>
-            <li>Test item 2</li>
-            <li>Test item 3</li>
-        </ul>
+      <form action="/{{todo.pk}}/search/" method="post">{% csrf_token %}
+        <label for="task_name">Task Name: </label>
+        <input id="task_name" type="text" name="task_name"><br>
+        <label for="task_description">Task Description: </label>
+        <input id="task_description" type="text" name="task_description">
+        <input type="submit" value="Add Task"><br><br>
+      </form>
     </div>
+    <div>
+      {% for task in tasks %}
+        <form action="/{{todo.pk}}/search/" method="post">{% csrf_token %}
+          <label for="task_name">Task Name: </label>
+          <input id="task_name" type="text" name="task_name" value="{{ task.task_name }}" readonly><br>
+          <label for="task_description">Task Description: </label>
+          <input id="task_description" type="text" name="task_description" value="{{ task.task_description }}">
+          <input type="submit" value="Edit Task"><br><br>
+        </form>
+        <form action="/{{todo.pk}}/search/" method="post">{% csrf_token %}
+          <input type="submit" value="Complete Task: {{ task.task_name }}" name="completion_status">
+          {% if task.completion_status %}
+            <p>Completed</p>
+          {% else %}
+            <p>Not Completed</p>
+          {% endif %}<br><br>
+        </form>
+      {% endfor %}
+    </div>
+    <div>{{todo.user.player_name}}</div>
   </body>
 </html>
+
+{% endblock %}
