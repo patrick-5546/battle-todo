@@ -6,7 +6,7 @@ class Todo(models.Model):
     user = models.OneToOneField(Player, on_delete=models.CASCADE, primary_key=True)
     
     def __str__(self):
-        return self.user.player_name + " to do list"
+        return self.user.player_name + " to do list, pk={}".format(self.pk)
     
 
 class Task(models.Model):
@@ -16,4 +16,4 @@ class Task(models.Model):
     task_description = models.TextField(blank=True)
 
     def __str__(self):
-        return self.task_name
+        return self.task_name + ", pk={}".format(self.pk)
