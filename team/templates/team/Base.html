@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'team/Base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'team/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'team/Team-hub.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Battle To-Do</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="https://google.com" target="_blank">
+                    Home
+                </a></li>
+            <li><a href="#" target="_blank">
+                    Teams
+                </a></li>
+            <li><a href="#" target="_blank">
+                    Battles
+                </a></li>
+            <li style="float: right"><a href="#" target="_blank">
+                    Logout
+                </a></li>
+        </ul>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+
+</html>

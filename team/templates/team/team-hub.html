@@ -1,8 +1,56 @@
-<html>
+{% extends 'team/Base.html' %}
 
+{% load static %}
 
-<head>
+{% block content %}
 
-</head>
+<div class="container">
+    <div>
+        <p>Insert description of skills here</p>
+    </div>
 
-</html>
+    <div class="Leaderboards">
+        <h1>Top 10 Players</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <div class="Leaderboards">
+        <h1>Top 10 Teams</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <div class="Team-name" style="text-align: center;">
+        <h1> {{ team.team_name }}</h1>
+    </div>
+
+    <div class="Team-box">
+        <!--Players-->
+        {% for player in team_players %}
+        <div class="Teammate-card">
+            <h1>{{ player.player_name }}</h1>
+            <div>Stat1</div>
+            <div>Stat2</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
