@@ -18,8 +18,10 @@
     <div class="points">Todo points: {{ todopoints }}</div>
     <div class="addtask">
       <form action="/{{todo.pk}}/search/" method="post">{% csrf_token %}
+        <div class="taskname">
         <label for="task_name">Task Name: </label>
         <input id="task_name" type="text" name="task_name"><br>
+        </div>
         <label for="task_description">Task Description: </label>
         <input id="task_description" type="text" name="task_description">
         <input type="submit" value="Add Task"><br><br>
@@ -29,8 +31,10 @@
       {% for task in tasks %}
       <div class="task">
         <form action="/{{todo.pk}}/search/" method="post">{% csrf_token %}
+          <div class="taskname">
           <label for="task_name">Task Name: </label>
           <input id="task_name" type="text" name="task_name" value="{{ task.task_name }}" readonly><br>
+          </div>
           <label for="task_description">Task Description: </label>
           <input id="task_description" type="text" name="task_description" value="{{ task.task_description }}">
           <input type="submit" value="Edit Task"><br><br>

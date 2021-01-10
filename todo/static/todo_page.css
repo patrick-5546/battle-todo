@@ -15,19 +15,23 @@
 .addtask {
     background-color: #2d3039;
     padding-top: 20px;
-    border-top: 3px solid lightgrey;
-    border-bottom: 3px solid lightgrey;
+    border-top: 3px solid rgb(126, 126, 126);
+    border-bottom: 3px solid #717beb;
 }
 
 .task {
-    background-color: #796fc1;
+    background: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
     padding-top: 35px;
-    border-top: 3px solid #838beb;
-    border-bottom: 3px solid #838beb;
+    border-top: 3px solid #717beb;
+    border-bottom: 3px solid #717beb;
 }
 
 .points {
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 20px;
+}
+
+.taskname {
+    margin-right: 38px;
 }
