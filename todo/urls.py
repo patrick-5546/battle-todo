@@ -7,6 +7,5 @@ app_name = 'todo'  # setting application namespace
 urlpatterns = [
     path('', views.login_page, name='login'),
     path('<int:pk>/todo', views.DetailView.as_view(), name='todo'),
-    path('register/', views.registerPage, name='register'),
-    # path('search/', views.search, name='search'),
+    path('search/', views.search, name='search'),
 ]
