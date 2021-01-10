@@ -109,6 +109,7 @@ html {
 }
 
 .Team-box .Teammate-card .stat-field input {
+  border: none;
   text-align: right;
   -ms-flex-line-pack: right;
       align-content: right;
