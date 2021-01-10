@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav id="navbar">
+    <nav id="navbar" data-aos="fade-down" data-aos-duration="1000">
         <ul>
             <li><a href="https://google.com" target="_blank">
                     Home
@@ -32,6 +32,10 @@
 
     {% endblock %}
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

@@ -5,22 +5,33 @@
 {% block content %}
 
 <div class="container">
-    <div>
-        <p>Insert description of skills here</p>
+    <div class="Skill-info">
+        <h1>How Skills Work</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate distinctio delectus autem. Excepturi, ea
+            perspiciatis consequatur qui beatae quis quibusdam laboriosam itaque nam dolorum amet et praesentium numquam
+            perferendis totam harum ex! Odio saepe necessitatibus minima quasi veritatis atque veniam quos, eum quia
+            perspiciatis temporibus, officiis eligendi. Saepe, modi commodi!</p>
+
+        <h2>Physical Attack</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, blanditiis.</p>
+        <h2>Physical Defense</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, blanditiis.</p>
+        <h2>Special Attack</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, blanditiis.</p>
+        <h2>Special Resistance</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, blanditiis.</p>
+        <h2>Agility</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, blanditiis.</p>
     </div>
 
     <div class="Leaderboards">
         <h1>Top 10 Players</h1>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
+        {% for player in team_players %}
+        <p>{{ player.player_name }}</p>
+        {% endfor %}
+        {% for player in team_players %}
+        <p>{{ player.player_name }}</p>
+        {% endfor %}
     </div>
 
     <div class="Leaderboards">
@@ -37,8 +48,9 @@
         <p>Lorem ipsum dolor sit amet.</p>
     </div>
 
-    <div class="Team-name" style="text-align: center;">
+    <div class="Team-points" style="text-align: center;">
         <h1> {{ team.team_name }}</h1>
+        <p>Available Points: {{ player.todo_points }}</p>
     </div>
 
     <div class="Team-box">
@@ -46,8 +58,16 @@
         {% for player in team_players %}
         <div class="Teammate-card">
             <h1>{{ player.player_name }}</h1>
-            <div>Stat1</div>
-            <div>Stat2</div>
+            <div>Physical Attack: {{ player.physical_attack }} <button type="button"><img src="Media/Plus-sign.png"
+                        alt="Invest Point" width="2em" height="2em"></button></div>
+            <div>Physical Defense: {{ player.physical_defense }} <button type="button"><img src="Media/Plus-sign.png"
+                        alt="Invest Point" width="2em" height="2em"></button></div>
+            <div>Special Attack: {{ player.special_attack }}<button type="button"><img src="Media/Plus-sign.png"
+                        alt="Invest Point" width="2em" height="2em"></button></div>
+            <div>Special Resistance: {{ player.special_defense }} <button type="button"><img src="Media/Plus-sign.png"
+                        alt="Invest Point" width="2em" height="2em"></button></div>
+            <div>Agility: {{ player.speed }}<button type="button"><img src="Media/Plus-sign.png" alt="Invest Point"
+                        width="2em" height="2em"></button></div>
         </div>
         {% endfor %}
     </div>

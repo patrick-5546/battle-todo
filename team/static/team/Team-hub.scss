@@ -6,9 +6,12 @@
 $Head-font: 'Open Sans', sans-serif;
 $Body-font: 'Comforta', sans-serif;
 
+//Basic settings
+
 body {
     background-color: $Base-colour;
     color: white;
+    margin: 0;
     font-family: 'Comforta', sans-serif;
 
     & h1 {
@@ -28,30 +31,40 @@ html {
 .container {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 3fr 1fr 3fr;
-    column-gap: 5vw;
-    row-gap: 20vh;
-    margin: 50px;
+    column-gap: 20px;
+    margin: 75px;
 }
 
 @media (max-width: 1120px) {
     .container {
         display: inline;
+        margin: 50px;
         & > .Team-box {
             display: inline;
         }
     }
-    
+}
+
+.Skill-info {
+    place-self: center;
+    width: 100%;
+    height: 100%;
+    background: #303030;
+    & p, h1, h2 {
+        padding: 20px;
+        margin: none;
+    }
 }
 
 .container > .Team-box {
     grid-column-start: span 3;
 }
 
-.Team-name {
+.Team-points {
     justify-content: center;
     grid-column-start: span 3;
-    margin-bottom: none;
+    margin-top: 200px;
+    margin-bottom: 100px;
 }
 
 //Containers for team section and player cards
@@ -70,10 +83,13 @@ html {
         border-color: White;
         & h1 {
             margin-left: 2vw;
+            font-family: $Head-font;
+            border-bottom: 2px solid;
         }
         & > div {
-            text-align: center;
-            padding-bottom: 10px;
+            text-align: left;
+            margin-left: 25px;
+            padding-bottom: 20px;
         }
     }
 }
@@ -93,6 +109,11 @@ html {
         padding: none;
         margin: none;
     }
+}
+
+
+.ignore { //class ignored by CSS Grid
+    display: contents
 }
 
 //Anchor button to scroll to upgrade skills section
