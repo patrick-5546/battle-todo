@@ -29,7 +29,7 @@ body h1 {
   display: block;
 }
 
-input[type=text], input[type=teamname] {
+input[type=text] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
