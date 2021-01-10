@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@600&display=swap');
 
-@use './Colours';
-@import "./Colours";
+$Base-colour: #EEEEEE;
+$Nav-colour: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
 
 $Head-font: 'Open Sans', sans-serif;
 $Body-font: 'Comforta', sans-serif;
@@ -10,7 +10,7 @@ $Body-font: 'Comforta', sans-serif;
 
 body {
     background-color: $Base-colour;
-    color: white;
+    color: $Base-colour;
     margin: 0;
     font-family: 'Comforta', sans-serif;
 
@@ -73,15 +73,16 @@ html {
     display: grid;
     grid-template-columns: repeat(5, 1fr); 
     gap: 20px;
+    padding: 50px;
     justify-content: center;
 
     & .Teammate-card {
+        background: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
         min-width: 100%;
         min-height: 100%;
         max-height: 100%;
         box-sizing: border-box;
-        border: 2px solid;
-        border-color: White;
+        border-radius: 15%;
         & h1 {
             margin-left: 2vw;
             font-family: $Head-font;
@@ -112,7 +113,12 @@ html {
     }
 }
 
-
+.grow {
+    transition: all .5s ease-in-out;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
 .ignore { //class ignored by CSS Grid
     display: contents
 }
