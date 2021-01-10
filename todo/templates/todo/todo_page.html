@@ -1,4 +1,5 @@
-<!-- {% include 'team/main.html' %}  -->
+{% extends 'team/Base.html' %}
+
 {% block content %}
 
 <!DOCTYPE html>
@@ -38,6 +39,7 @@
       {% endfor %}
     </div>
     <div>{{todo.user.player_name}}</div>
+    <div>Todo points: {{ todopoints }}</div>
   </body>
 </html>
 
