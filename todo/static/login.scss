@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@600&display=swap%27');
+
+$Base-colour: #000000;
+$Nav-colour: #52057b;
+$Card-shade: #272727;
+
+$Head-font: 'Open Sans', sans-serif;
+$Body-font: 'Comforta', sans-serif;
+
+
+body {
+    background-color: $Base-colour;
+    color: white;
+    font-family: $Body-font;
+
+    & h1 {
+        font-family: $Head-font, sans-serif;
+    }
+}
+
+
+.container {
+    height: 100%;
+    
+
+    .login-form {
+        background-color: white;
+        border: 3px solid $Base-colour;
+        padding: 40px;
+        max-width: 500px;
+        margin: auto;
+
+        .login-title {
+            color: black;
+        }
+    
+        .login-container {
+            display: block;
+            
+        }
+    }
+}
+
+
+input[type=text], input[type=teamname] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 20px;
+  }
+
+button[type=submit] {
+    background-color: #2546da;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 20px;
+}

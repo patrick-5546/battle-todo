@@ -9,7 +9,7 @@ class PlayerInline(admin.StackedInline):
                                'speed'], 'classes': ['collapse']}),
     ]
     model = Player
-    extra = 5
+    extra = 1
 
 class TeamAdmin(admin.ModelAdmin):
     inlines = [PlayerInline]

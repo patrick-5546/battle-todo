@@ -12,6 +12,7 @@ def teamHub(request):
 class DetailView(generic.DetailView):
     model = Team
     template_name = 'team/team-hub.html'
+    context_object_name = 'team'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

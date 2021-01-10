@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@600&display=swap%27");
+body {
+  background-color: #000000;
+  color: white;
+  font-family: "Comforta", sans-serif;
+}
+
+body h1 {
+  font-family: "Open Sans", sans-serif, sans-serif;
+}
+
+.container {
+  height: 100%;
+}
+
+.container .login-form {
+  background-color: white;
+  border: 3px solid #000000;
+  padding: 40px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.container .login-form .login-title {
+  color: black;
+}
+
+.container .login-form .login-container {
+  display: block;
+}
+
+input[type=text], input[type=teamname] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 20px;
+}
+
+button[type=submit] {
+  background-color: #2546da;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 20px;
+}
+/*# sourceMappingURL=login.css.map */
