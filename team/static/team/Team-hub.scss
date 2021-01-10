@@ -32,6 +32,7 @@ html {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     column-gap: 20px;
+    overflow: hidden;
     margin: 75px;
 }
 
