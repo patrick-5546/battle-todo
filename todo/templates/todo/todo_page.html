@@ -10,9 +10,9 @@
     </header>
     <div>
         <ul>
-          
-            <li> </li>
-     
+          {% for task in tasks %}
+            <li>{{task.task_name}}: {{task.task_description}}</li> 
+          {% endfor %}
         </ul>
     </div>
     <div>
