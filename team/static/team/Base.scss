@@ -1,9 +1,8 @@
 // Baseline stylesheet, loaded into all pages. 
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@600&display=swap');
 
-$Base-colour: #000000;
+$Base-colour: #EEEEEE;
 $Nav-colour: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
-$Card-shade: #272727;
 
 $Head-font: 'Open Sans', sans-serif;
 $Body-font: 'Comforta', sans-serif;
@@ -35,7 +34,7 @@ body {
         margin: none;
         padding: none;
         overflow: hidden;
-        background-color: $Nav-colour;
+        background: $Nav-colour;
     }
 
     & li {

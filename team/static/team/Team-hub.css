@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@600&display=swap");
-@use './Colours';
 body {
   background-color: #ffffff;
   color: #a7a7a7;
@@ -12,7 +11,7 @@ body h1 {
 }
 
 body #navbar {
-  background: #52057b;
+  background: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
 }
 
 html {
@@ -76,16 +75,17 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 50px;
 }
 
 .Team-box .Teammate-card {
+  background: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
   min-width: 100%;
   min-height: 100%;
   max-height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 2px solid;
-  border-color: White;
+  border-radius: 15%;
 }
 
 .Team-box .Teammate-card h1 {
@@ -94,10 +94,26 @@ html {
   border-bottom: 2px solid;
 }
 
-.Team-box .Teammate-card > div {
-  text-align: left;
+.Team-box .Teammate-card h3 {
+  margin: none;
+  padding: none;
+  margin-left: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.Team-box .Teammate-card .stat-field {
+  margin-bottom: 5px;
   margin-left: 25px;
   padding-bottom: 20px;
+  text-align: left;
+}
+
+.Team-box .Teammate-card .stat-field input {
+  text-align: right;
+  -ms-flex-line-pack: right;
+      align-content: right;
+  float: right;
+  margin-right: 25px;
 }
 
 .Leaderboards {
@@ -116,6 +132,16 @@ html {
   text-align: center;
   padding: none;
   margin: none;
+}
+
+.grow {
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.grow:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .ignore {

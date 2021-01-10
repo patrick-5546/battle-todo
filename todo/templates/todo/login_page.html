@@ -3,18 +3,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <title>Battle To-Do</title>
     <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}" />
   </head>
 
   <body>
     <div class="container">
-      <form class="login-form" method="post">
-      {% csrf_token %}
+      <form class="login-form" action="/redirectTodo/" method="post">
+        {% csrf_token %}
         <h1 class="login-title">Login Form</h1>
         <div class="login-container">
           <input type="text" placeholder="Username" name="username" required />
-
-          <input type="teamname" placeholder="Team Name" name="teamname" required />
 
           <button type="submit">Login</button>
         </div>
