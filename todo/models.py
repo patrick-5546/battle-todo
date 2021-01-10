@@ -4,6 +4,7 @@ from team.models import Player
 
 class Todo(models.Model):
     player = models.OneToOneField(Player, on_delete=models.CASCADE, primary_key=True)
+    todo_points = models.IntegerField(default=0)
     
     def __str__(self):
         return self.player.player_name + " to do list, pk={}".format(self.pk)
