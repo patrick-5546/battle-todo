@@ -25,6 +25,9 @@ def run(pk1, pk2):
     player10 = Player.objects.get(pk = 10)
     team1list = [player1, player2, player3, player4, player5]
     team2list = [player6, player7, player8, player9, player10]
+    team1.team_points = 0
+    team2.team_points = 0
+    resetgamestate(team1list, team2list)
     winner = playgame(team1, team2, team1list, team2list)
     player1.save()
     player2.save()
@@ -39,6 +42,27 @@ def run(pk1, pk2):
     team1.save()
     team2.save()
     return winner
+
+def resetgamestate(team1list, team2list):
+    global team1PhysDefense
+    global team1SpecDefense
+    global team2PhysDefense
+    global team2SpecDefense
+    global team1HP
+    global team2HP
+
+    for i in range(5):
+        team1list[i].has_attacked = False
+        team2list[i].has_attacked = False
+        team1list[i].damage_dealt = 0
+        team2list[i].damage_dealt = 0
+
+    team1PhysDefense = 0
+    team1SpecDefense = 0
+    team2PhysDefense = 0
+    team2SpecDefense = 0
+    team1HP = 500.0
+    team2HP = 500.0
 
 def playgame(team1, team2, team1list, team2list):
     global team1PhysDefense
