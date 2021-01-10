@@ -16,7 +16,7 @@
         <h1 class="title">{{ todo.player.player_name }}'s Todo List</h1>
       </header>
       <div class="upgrade">
-        <div class="points">Todo points: {{ todopoints }}</div>
+        <div class="points">Todo points: {{ todo.player.todo_points }}</div>
         <form class="btn-form" action="/team/{{todo.player.player_team.pk}}/team-hub" method="GET">
           {% csrf_token %}
           <button type="battle-btn">Upgrade Skills</button>
