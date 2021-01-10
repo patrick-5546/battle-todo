@@ -26,26 +26,16 @@
 
     <div class="Leaderboards">
         <h1>Top 10 Players</h1>
-        {% for player in team_players %}
-        <p>{{ player.player_name }}</p>
-        {% endfor %}
-        {% for player in team_players %}
-        <p>{{ player.player_name }}</p>
+        {% for player in player_leaderboards %}
+        <p>{{ player.player_name }}: {{ player.player_points }}</p>
         {% endfor %}
     </div>
 
     <div class="Leaderboards">
         <h1>Top 10 Teams</h1>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
+        {% for team in team_leaderboards %}
+        <p>{{ team.team_name }}: {{ team.team_points }}</p>
+        {% endfor %}
     </div>
 
     <div class="Team-points" style="text-align: center;">
@@ -96,12 +86,15 @@
                         <input id="speed" type="number" name="speed" min="0" max="10" value="{{ player.speed}}">
                     </div>
                     <div class="stat-field">
-                        <label for="player_special_select">Physical Attack</label>
-                        <input id="player_special_select" type="radio" name="player_special_select_yes"
-                            value="{{ player.physiscala_Aattack }}">
-                        <label for="player_special_select">Special Attack</label>
-                        <input id="player_special_select" type="radio" name="player_special_select_yes"
-                            value="{{ player.special_attack }}">
+                        {% if player.player_special_select %}
+                            <p>Current Select: Special Skills</p>
+                        {% else %}
+                            <p>Current Select: Physical Skills</p>
+                        {% endif %}
+                        <input type="radio" id="physical" name="select" value="physical" checked>
+                        <label for="physical">Physical: </label><br>
+                        <input type="radio" id="special" name="select" value="special">
+                        <label for="special">Special: </label>
                     </div>
                     <div style="text-align: center;"><input type="submit" value="Update"><br><br> </div>
                 </form>
