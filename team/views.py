@@ -18,7 +18,7 @@ class DetailView(generic.DetailView):
         context = super().get_context_data(**kwargs)
         # Add in a QuerySet of all the books
         context['team_players'] = Player.objects.filter(
-            player_team=Team.objects.get(pk=self.object.pk))
+            player_team=Team.objects.get(pk=self.object.pk))[:5]
         context['player_leaderboards'] = Player.objects.order_by('-player_points')[:10]
         context['team_leaderboards'] = Team.objects.order_by('-team_points')[:10]
         return context
