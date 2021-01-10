@@ -71,6 +71,22 @@
         </div>
         {% endfor %}
     </div>
+
+    <div class="divInvestSkill">
+        <h1>Invest your hard-earned points!</h1>
+        <form action="">
+            <label for="players">Choose Player to invest in</label>
+            <select name="players" id="players">
+                {% for player in team_players %}
+                <option value="{{ player.player_name }}"></option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+
+        <p>Points invested will not be returned, Choose wisely.</p>
+
+    </div>
 </div>
 
 {% endblock %}
