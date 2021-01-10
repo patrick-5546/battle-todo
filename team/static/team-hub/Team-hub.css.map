@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,OAAO;EAC9B,kBAAkB,EAAE,OAAO;CAC9B;;AAGD,AAAA,SAAS,CAAA;EACL,OAAO,EAAE,IAAI;CAEhB",
-    "sources": [
-        "Team-hub.scss"
-    ],
-    "names": [],
-    "file": "Team-hub.css"
-}
