@@ -1,0 +1,33 @@
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+.addtask {
+    background-color: #2d3039;
+    padding-top: 20px;
+    border-top: 3px solid lightgrey;
+    border-bottom: 3px solid lightgrey;
+}
+
+.task {
+    background-color: #796fc1;
+    padding-top: 35px;
+    border-top: 3px solid #838beb;
+    border-bottom: 3px solid #838beb;
+}
+
+.points {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
