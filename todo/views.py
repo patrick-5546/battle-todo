@@ -3,7 +3,6 @@ from django.views import generic
 from django.contrib.auth.forms import UserCreationForm
 
 from .models import Todo, Task
-from .forms import TaskForm
 
 
 def login_page(request):
@@ -38,13 +37,21 @@ class DetailView(generic.DetailView):
 
 def search(request, pk):
     if request.method == 'POST':
-        form = TaskForm(request.POST)
-        if form.is_valid():
-            task = Task(task_name=form.cleaned_data.get('task_name'),
-                        task_description=form.cleaned_data.get('task_description'),
-                        todo_list=Todo.objects.get(pk=pk))
-            task.save()
-            return redirect('todo:todo', pk=pk)
-
-    print('failed attempt')
+        if 'completion_status' in request.POST:
+            task_name = request.POST.get('completion_status').split(': ')[1]
+            task = Task.objects.get(task_name=task_name)
+            task.completion_status = True
+        else:
+            task_name = request.POST.get('task_name')
+            task_description = request.POST.get('task_description')
+            try:
+                task = Task.objects.get(task_name=task_name)
+                task.task_description = task_description
+            except Task.DoesNotExist:
+                task = Task(task_name=task_name, task_description=task_description,
+                            todo_list=Todo.objects.get(pk=pk))
+        task.save()
+    else:
+        print('failed attempt')
+    
     return redirect('todo:todo', pk=pk)

@@ -12,16 +12,27 @@
         <input id="task_name" type="text" name="task_name"><br>
         <label for="task_description">Task Description: </label>
         <input id="task_description" type="text" name="task_description">
-        <input type="submit" value="OK"><br>
+        <input type="submit" value="Add Task"><br><br>
       </form>
     </div>
-
     <div>
-      <ul>
-        {% for task in tasks %}
-        <li>{{task.task_name}}: {{task.task_description}}</li>
-        {% endfor %}
-      </ul>
+      {% for task in tasks %}
+        <form action="/{{todo.pk}}/search/" method="post">{% csrf_token %}
+          <label for="task_name">Task Name: </label>
+          <input id="task_name" type="text" name="task_name" value="{{ task.task_name }}" readonly><br>
+          <label for="task_description">Task Description: </label>
+          <input id="task_description" type="text" name="task_description" value="{{ task.task_description }}">
+          <input type="submit" value="Edit Task"><br><br>
+        </form>
+        <form action="/{{todo.pk}}/search/" method="post">{% csrf_token %}
+          <input type="submit" value="Complete Task: {{ task.task_name }}" name="completion_status">
+          {% if task.completion_status %}
+            <p>Completed</p>
+          {% else %}
+            <p>Not Completed</p>
+          {% endif %}<br><br>
+        </form>
+      {% endfor %}
     </div>
     <div>{{todo.user.player_name}}</div>
   </body>
