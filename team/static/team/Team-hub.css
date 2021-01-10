@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@600&display=swap");
 body {
   background-color: #EEEEEE;
+  height: 100vh;
   color: white;
   margin: 0;
   font-family: 'Comforta', sans-serif;
@@ -69,18 +70,16 @@ html {
 .Team-box {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   padding: 50px;
 }
 
 .Team-box .Teammate-card {
   background: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
   min-width: 100%;
+  max-width: 100%;
   min-height: 100%;
   max-height: 100%;
   -webkit-box-sizing: border-box;
@@ -109,11 +108,18 @@ html {
 }
 
 .Team-box .Teammate-card .stat-field input {
+  border: none;
   text-align: right;
   -ms-flex-line-pack: right;
       align-content: right;
   float: right;
   margin-right: 25px;
+}
+
+@media (max-width: 1120px) {
+  .container h1 {
+    margin-left: 10vw;
+  }
 }
 
 .Leaderboards {

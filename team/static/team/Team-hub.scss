@@ -10,6 +10,7 @@ $Body-font: 'Comforta', sans-serif;
 
 body {
     background-color: $Base-colour;
+    height: 100vh;
     color: white;
     margin: 0;
     font-family: 'Comforta', sans-serif;
@@ -71,14 +72,14 @@ html {
 //Containers for team section and player cards
 .Team-box {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    justify-content: center;
     padding: 50px;
 
     & .Teammate-card {
         background: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
         min-width: 100%;
+        max-width: 100%;
         min-height: 100%;
         max-height: 100%;
         box-sizing: border-box;
@@ -88,7 +89,6 @@ html {
             font-family: $Head-font;
             border-bottom: 2px solid;
         }
-
         & h3 {
             margin:none;
             padding: none;
@@ -109,6 +109,12 @@ html {
             float: right;
             margin-right: 25px;
         }
+    }
+}
+
+@media (max-width: 1120px) {
+    .container h1 {
+        margin-left: 10vw;
     }
 }
 
