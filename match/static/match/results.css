@@ -1,3 +1,10 @@
+.winner {
+    font-size: 5em;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(151, 153, 47, 0.322);
+}
+
 .team {
     display: flex;
     flex-direction: row;
@@ -8,11 +15,11 @@
 }
 
 .team-1 {
-    background-color: lightblue;
+    background-color: rgb(95, 184, 214);
 }
 
 .team-2 {
-    background-color: orange;
+    background-color: rgb(197, 89, 89);
 }
 
 .column {
@@ -23,5 +30,12 @@
 }
 
 .section {
+    font-size: large;
+    font-weight: bold;
     margin-bottom: 50px;
+}
+
+.info {
+    font-size: medium;
+    margin-bottom: 35px;
 }

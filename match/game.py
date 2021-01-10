@@ -6,9 +6,9 @@ team1PhysDefense = 0
 team1SpecDefense = 0
 team2PhysDefense = 0
 team2SpecDefense = 0
-team1HP = 10.0
-team2HP = 10.0
-baseDamage = 0.5
+team1HP = 1000.0
+team2HP = 1000.0
+baseDamage = 50.0
 
 def run(pk1, pk2):
     team1 = Team.objects.get(pk = pk1)
@@ -105,23 +105,23 @@ def attack(currentattacker, team1attacking):
     # player from team 1 attacks team 2
     if team1attacking == True:
         # chose physical attack
-        if currentattacker.player_special_select == True:
-            currentattacker.damage_dealt += round(currentattacker.physical_attack/team2PhysDefense + baseDamage, 2)
+        if currentattacker.player_special_select == False:
+            currentattacker.damage_dealt += round(currentattacker.physical_attack/team2PhysDefense * 100 + baseDamage, 2)
             team2HP -= currentattacker.damage_dealt
         # chose special attack
         else:
-            currentattacker.damage_dealt += round(currentattacker.physical_attack/team2SpecDefense + baseDamage, 2)
+            currentattacker.damage_dealt += round(currentattacker.special_attack/team2SpecDefense * 100 + baseDamage, 2)
             team2HP -= currentattacker.damage_dealt
     
     # player from team 2 attacks team 1
     else:
         # chose physical attack
-        if currentattacker.player_special_select == True:
-            currentattacker.damage_dealt += round(currentattacker.physical_attack/team1PhysDefense + baseDamage, 2)
+        if currentattacker.player_special_select == False:
+            currentattacker.damage_dealt += round(currentattacker.physical_attack/team1PhysDefense * 100 + baseDamage, 2)
             team1HP -= currentattacker.damage_dealt
         # chose special attack
         else:
-            currentattacker.damage_dealt += round(currentattacker.physical_attack/team1SpecDefense + baseDamage, 2)
+            currentattacker.damage_dealt += round(currentattacker.special_attack/team1SpecDefense * 100 + baseDamage, 2)
             team1HP -= currentattacker.damage_dealt
     currentattacker.has_attacked = True
         

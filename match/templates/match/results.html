@@ -14,101 +14,116 @@
     <div class="column">
         <span class="section">Team 1</span>
         {% for player in team1list %}
-        <span class="section">{{ player.player_name }}</span>
+        <span class="info">{{ player.player_name }}</span>
         {% endfor %}
     </div>
 
     <div class="column">
         <span class="section">Physical Attack</span>
         {% for player in team1list %}
-        <span class="section">{{ player.physical_attack }}</span>
+        <span class="info">{{ player.physical_attack }}</span>
         {% endfor %}
     </div>
 
     <div class="column">
         <span class="section">Physical Defense</span>
         {% for player in team1list %}
-        <span class="section">{{ player.physical_defense }}</span>
+        <span class="info">{{ player.physical_defense }}</span>
         {% endfor %}
     </div>
 
     <div class="column">
         <span class="section">Special Attack</span>
         {% for player in team1list %}
-        <span class="section">{{ player.special_attack }}</span>
+        <span class="info">{{ player.special_attack }}</span>
         {% endfor %}
     </div>
 
     <div class="column">
         <span class="section">Special Defense</span>
         {% for player in team1list %}
-        <span class="section">{{ player.special_defense }}</span>
+        <span class="info">{{ player.special_defense }}</span>
         {% endfor %}
     </div>
 
     <div class="column">
         <span class="section">Speed</span>
         {% for player in team1list %}
-        <span class="section">{{ player.speed }}</span>
+        <span class="info">{{ player.speed }}</span>
         {% endfor %}
     </div>
 
     <div class="column">
         <span class="section">Damage Dealt</span>
         {% for player in team1list %}
-        <span class="section">{{ player.damage_dealt }}</span>
+        <span class="info">{{ player.damage_dealt }}</span>
         {% endfor %}
     </div>
+
+    <div class="column">
+        <span class="section">Overall</span>
+        <span class="info">Total Damage Dealt: {{ team1damage }}</span>
+        <span class="info">Remaining HP: {{ team1hp }}</span>
+        <span class="info">Team Points: {{ team1.team_points }}</span>
+    </div>
+
 </div>
 
 <div class="team team-2">
     <div class="column">
         <span class="section">Team 2</span>
         {% for player in team2list %}
-        <span class="section">{{ player.player_name }}</span>
+        <span class="info">{{ player.player_name }}</span>
         {% endfor %}
     </div>
 
     <div class="column">
         <span class="section">Physical Attack</span>
         {% for player in team2list %}
-        <span class="section">{{ player.physical_attack }}</span>
+        <span class="info">{{ player.physical_attack }}</span>
         {% endfor %}
     </div>
 
     <div class="column">
         <span class="section">Physical Defense</span>
         {% for player in team2list %}
-        <span class="section">{{ player.physical_defense }}</span>
+        <span class="info">{{ player.physical_defense }}</span>
         {% endfor %}
     </div>
 
     <div class="column">
         <span class="section">Special Attack</span>
         {% for player in team2list %}
-        <span class="section">{{ player.special_attack }}</span>
+        <span class="info">{{ player.special_attack }}</span>
         {% endfor %}
     </div>
 
     <div class="column">
         <span class="section">Special Defense</span>
         {% for player in team2list %}
-        <span class="section">{{ player.special_defense }}</span>
+        <span class="info">{{ player.special_defense }}</span>
         {% endfor %}
     </div>
 
     <div class="column">
         <span class="section">Speed</span>
         {% for player in team2list %}
-        <span class="section">{{ player.speed }}</span>
+        <span class="info">{{ player.speed }}</span>
         {% endfor %}
     </div>
 
     <div class="column">
         <span class="section">Damage Dealt</span>
         {% for player in team2list %}
-        <span class="section">{{ player.damage_dealt }}</span>
+        <span class="info">{{ player.damage_dealt }}</span>
         {% endfor %}
+    </div>
+
+    <div class="column">
+        <span class="section">Overall</span>
+        <span class="info">Total Damage Dealt: {{ team2damage }}</span>
+        <span class="info">Remaining HP: {{ team2hp }}</span>
+        <span class="info">Team Points: {{ team2.team_points }}</span>
     </div>
 </div>
 
