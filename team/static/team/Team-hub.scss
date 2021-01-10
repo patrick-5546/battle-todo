@@ -1,0 +1,23 @@
+body {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 9fr 1fr;
+}
+
+
+.Team-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 1fr); 
+    place-items: center;
+}
+
+.Teammate {
+    display: grid;
+    grid-template-rows: 4fr 1fr 1fr 1fr; //TBD with skills
+    padding: 10px;
+}
+
+//.Statbox {}
+
+//.Leaderboard {}
+
