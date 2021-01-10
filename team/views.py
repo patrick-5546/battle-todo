@@ -19,7 +19,7 @@ class DetailView(generic.DetailView):
         # Add in a QuerySet of all the books
         context['team_players'] = Player.objects.filter(
             player_team=Team.objects.get(pk=self.object.pk))
-        context['player_leaderboards'] = Player.objects.order_by('')
+        # context['player_leaderboards'] = Player.objects.order_by('')
         return context
 
 def find(request, pk):
