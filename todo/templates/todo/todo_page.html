@@ -13,14 +13,14 @@
   <body>
     <div class="column">
     <header>
-      <h1 class="title">Todolist</h1>
+      <h1 class="title">Todo List</h1>
     </header>
     <form action="/team/{{todo.player.player_team.pk}}/team-hub" method="GET">
       {% csrf_token %}
       <button type="battle-btn">Upgrade Skills</button>
     </form> 
     <div>
-    <div class="points">Todo points: {{ todopoints }}</div>
+    <div class="points">Todo points: {{ todo.player.todo_points }}</div>
     <div class="addtask">
       <form action="/{{todo.pk}}/search/" method="post">{% csrf_token %}
         <div class="taskname">
