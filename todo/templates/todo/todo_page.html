@@ -9,6 +9,10 @@
     <header>
       <h1>Todolist</h1>
     </header>
+    <form action="/team/{{todo.player.player_team.pk}}/team-hub" method="GET">
+      {% csrf_token %}
+      <button type="battle-btn">Upgrade Skills</button>
+    </form> 
     <div>
       <form action="/{{todo.pk}}/search/" method="post">{% csrf_token %}
         <label for="task_name">Task Name: </label>
