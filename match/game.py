@@ -6,8 +6,8 @@ team1PhysDefense = 0
 team1SpecDefense = 0
 team2PhysDefense = 0
 team2SpecDefense = 0
-team1HP = 1000.0
-team2HP = 1000.0
+team1HP = 500.0
+team2HP = 500.0
 baseDamage = 50.0
 
 def run(pk1, pk2):

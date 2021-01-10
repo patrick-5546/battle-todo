@@ -14,7 +14,7 @@ player_fixtures = [
             'todo_points': 0,
             'physical_attack': 1,
             'physical_defense': 2,
-            'special_attack': 3,
+            'special_attack': 5,
             'special_defense': 2,
             'speed': 5
         }
@@ -50,7 +50,7 @@ player_fixtures = [
             'todo_points': 0,
             'physical_attack': 1,
             'physical_defense': 5,
-            'special_attack': 1,
+            'special_attack': 2,
             'special_defense': 3,
             'speed': 1
         }
@@ -66,7 +66,7 @@ player_fixtures = [
             'has_attacked': False,
             'damage_dealt': 0.0,
             'todo_points': 0,
-            'physical_attack': 2,
+            'physical_attack': 4,
             'physical_defense': 1,
             'special_attack': 1,
             'special_defense': 1,
@@ -84,7 +84,7 @@ player_fixtures = [
             'has_attacked': False,
             'damage_dealt': 0.0,
             'todo_points': 0,
-            'physical_attack': 3,
+            'physical_attack': 5,
             'physical_defense': 6,
             'special_attack': 1,
             'special_defense': 1,
@@ -104,7 +104,7 @@ player_fixtures = [
             'todo_points': 0,
             'physical_attack': 1,
             'physical_defense': 1,
-            'special_attack': 4,
+            'special_attack': 5,
             'special_defense': 4,
             'speed': 1
         }
@@ -120,7 +120,7 @@ player_fixtures = [
             'has_attacked': False,
             'damage_dealt': 0.0,
             'todo_points': 0,
-            'physical_attack': 3,
+            'physical_attack': 4,
             'physical_defense': 1,
             'special_attack': 1,
             'special_defense': 4,
@@ -140,7 +140,7 @@ player_fixtures = [
             'todo_points': 0,
             'physical_attack': 1,
             'physical_defense': 1,
-            'special_attack': 7,
+            'special_attack': 9,
             'special_defense': 1,
             'speed': 1
         }
@@ -158,7 +158,7 @@ player_fixtures = [
             'todo_points': 0,
             'physical_attack': 1,
             'physical_defense': 1,
-            'special_attack': 3,
+            'special_attack': 5,
             'special_defense': 1,
             'speed': 5
         }
@@ -174,7 +174,7 @@ player_fixtures = [
             'has_attacked': False,
             'damage_dealt': 0.0,
             'todo_points': 0,
-            'physical_attack': 1,
+            'physical_attack': 2,
             'physical_defense': 6,
             'special_attack': 1,
             'special_defense': 2,
