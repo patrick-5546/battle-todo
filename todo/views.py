@@ -35,11 +35,7 @@ class DetailView(generic.DetailView):
         context = super().get_context_data(**kwargs)
         context['tasks'] = Task.objects.filter(
             todo_list=Todo.objects.get(pk=self.object.pk))
-        context['todopoints'] = 0
-        for task in context['tasks']:
-            if task.completion_status == True:
-                context['todopoints'] += 5
-        Todo.player.todo_points = context['todopoints']
+
         return context
 
 def search(request, pk):
@@ -48,6 +44,10 @@ def search(request, pk):
             task_name = request.POST.get('completion_status').split(': ')[1]
             task = Task.objects.get(task_name=task_name)
             task.completion_status = True
+            p = task.todo_list.player
+            p.todo_points += 5
+            p.save()
+            print(task.todo_list.player.todo_points)
         else:
             task_name = request.POST.get('task_name')
             task_description = request.POST.get('task_description')

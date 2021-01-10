@@ -6,57 +6,72 @@
 
 <!DOCTYPE html>
 <html>
-<head> 
-  <link rel="stylesheet" type="text/css" href="{% static 'todo_page.css' %}">
-</head>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'todo_page.css' %}" />
+  </head>
 
   <body>
     <div class="column">
-    <header>
-      <h1 class="title">Todolist</h1>
-    </header>
-    <form action="/team/{{todo.player.player_team.pk}}/team-hub" method="GET">
-      {% csrf_token %}
-      <button type="battle-btn">Upgrade Skills</button>
-    </form> 
-    <div>
-    <div class="points">Todo points: {{ todopoints }}</div>
-    <div class="addtask">
-      <form action="/{{todo.pk}}/search/" method="post">{% csrf_token %}
-        <div class="taskname">
-        <label for="task_name">Task Name: </label>
-        <input id="task_name" type="text" name="task_name"><br>
-        </div>
-        <label for="task_description">Task Description: </label>
-        <input id="task_description" type="text" name="task_description">
-        <input type="submit" value="Add Task"><br><br>
-      </form>
-    </div>
-    <div>
-      {% for task in tasks %}
-      <div class="task">
-        <form action="/{{todo.pk}}/search/" method="post">{% csrf_token %}
-          <div class="taskname">
-          <label for="task_name">Task Name: </label>
-          <input id="task_name" type="text" name="task_name" value="{{ task.task_name }}" readonly><br>
-          </div>
-          <label for="task_description">Task Description: </label>
-          <input id="task_description" type="text" name="task_description" value="{{ task.task_description }}">
-          <input type="submit" value="Edit Task"><br><br>
-        </form>
-        <form action="/{{todo.pk}}/search/" method="post">{% csrf_token %}
-          <input class="complete" type="submit" value="Complete Task: {{ task.task_name }}" name="completion_status">
-          {% if task.completion_status %}
-            <p>Completed</p>
-          {% else %}
-            <p>Not Completed</p>
-          {% endif %}<br><br>
+      <header>
+        <h1 class="title">{{ todo.player.player_name }}'s Todo List</h1>
+      </header>
+      <div class="upgrade">
+        <div class="points">Todo points: {{ todo.player.todo_points }}</div>
+        <form class="btn-form" action="/team/{{todo.player.player_team.pk}}/team-hub" method="GET">
+          {% csrf_token %}
+          <button type="battle-btn">Upgrade Skills</button>
         </form>
       </div>
-      {% endfor %}
+      <div class="todolist">
+        <div class="addtask">
+          <form action="/{{todo.pk}}/search/" method="post">
+            {% csrf_token %}
+            <div class="taskname-add">
+              <input id="task_name" type="text" name="task_name" placeholder="Task Name"/><br />
+            </div>
+            <div class="taskdesc-add">
+              <input id="task_description" type="text" name="task_description" placeholder="Task Description"/><br />
+            </div>
+            <br />
+            <input type="submit" value="Add Task" /><br /><br />
+          </form>
+        </div>
+        <div>
+          {% for task in tasks %}
+          <div class="task">
+            <form action="/{{todo.pk}}/search/" method="post">
+              {% csrf_token %}
+              <div class="taskname">
+                <label for="task_name">Task Name: </label>
+                <input id="task_name" type="text" name="task_name" value="{{ task.task_name }}" readonly /><br />
+              </div>
+              <div class="taskdesc">
+              <label for="task_description">Task Description: </label>
+              <input id="task_description" type="text" name="task_description" value="{{ task.task_description }}" />
+              </div>
+              <input type="submit" value="Edit Task" /><br /><br />
+            </form>
+            <form action="/{{todo.pk}}/search/" method="post">
+              {% csrf_token %}
+              <input
+                class="complete"
+                type="submit"
+                value="Complete Task: {{ task.task_name }}"
+                name="completion_status"
+              />
+              {% if task.completion_status %}
+              <h3>&#10003;</h3>
+              {% else %}
+              <h3>&#10799;</h3>
+              {% endif %}<br /><br />
+            </form>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
     </div>
-    <div>{{todo.user.player_name}}</div>
-  </div>
+    <div class="footer">
+    </div>
   </body>
 </html>
 
