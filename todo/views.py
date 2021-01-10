@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.views import generic
 
-from .models import *
-from .forms import *
+from .models import Todo, Task
+from .forms import TaskForm
 
 
 def login_page(request):
@@ -14,33 +14,23 @@ def login_page(request):
 class DetailView(generic.DetailView):
     model = Todo
     template_name = 'todo/todo_page.html'
-    form = TaskForm()
     context_object_name = 'todo'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
-        # Add in a QuerySet of all the books
-
         context['tasks'] = Task.objects.filter(
             todo_list=Todo.objects.get(pk=self.object.pk))
-        context['form'] = self.form
-
         return context
 
-    def post(self, request, **kwargs):
-        self.object = self.get_object()
+def search(request, pk):
+    if request.method == 'POST':
         form = TaskForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect(self.request.path_info)
+            task = Task(task_name=form.cleaned_data.get('task_name'),
+                        task_description=form.cleaned_data.get('task_description'),
+                        todo_list=Todo.objects.get(pk=pk))
+            task.save()
+            return redirect('todo:todo', pk=pk)
 
-        return render(request, self.template_name, context=self.get_context_data(**kwargs))
-
-# search works as a "buffer" for when we are obtaining data
-# def search(request):
-#     if request.method == 'GET':
-#         search = request.GET.get('make_task')
-        
-#         print("ok")
-#         return redirect('todo:course', pk=search)
+    print('failed attempt')
+    return redirect('todo:todo', pk=pk)

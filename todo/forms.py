@@ -1,10 +1,5 @@
 from django import forms
-from django.forms import ModelForm
 
-from .models import *
-
-class TaskForm(forms.ModelForm):
-
-    class Meta:
-        model = Task
-        fields = '__all__'
+class TaskForm(forms.Form):
+    task_name = forms.CharField(max_length=200)
+    task_description = forms.CharField(max_length=2000)

@@ -7,11 +7,12 @@
       <h1>Todolist</h1>
     </header>
     <div>
-      <form method="post"> {% comment %} action="{%url 'todo:search' %}"> {% endcomment %}
-        {% csrf_token %}
-        Task: {{form.task_name}} 
-        Description: {{form.task_description}}
-        <input type="submit" name="make_task" />
+      <form action="/{{todo.pk}}/search/" method="post">{% csrf_token %}
+        <label for="task_name">Task Name: </label>
+        <input id="task_name" type="text" name="task_name"><br>
+        <label for="task_description">Task Description: </label>
+        <input id="task_description" type="text" name="task_description">
+        <input type="submit" value="OK"><br>
       </form>
     </div>
 
