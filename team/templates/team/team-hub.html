@@ -72,24 +72,25 @@
         {% endfor %}
     </div>
 
-    <div class="InvestSkill">
-        <h1>Invest your hard-earned points!</h1>
+</div>
 
-        <form action="/returnpage.php">
-            <label for="players">Choose Player to invest in: </label>
-            <select name="players" id="players">
-                {% for player in team_players %}
-                <option value="Blarg">{{ player.player_name }}</option>
-                {% endfor %}
-            </select>
-            <input type="submit" value="Submit">
-            <label for="skillpoints">Choose points</label>
-            <input type="number" id="skillpoints" name="skillpoints" min="1" max="20" placeholder="points">
-            Points invested will not be returned, Choose wisely.
-        </form>
+<div class="InvestSkill">
+    <h1>Invest your hard-earned points!</h1>
+
+    <form action="/returnpage.php">
+        <label for="players">Choose Player to invest in: </label>
+        <select name="players" id="players">
+            {% for player in team_players %}
+            <option value="Blarg">{{ player.player_name }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+        <label for="skillpoints">Choose points</label>
+        <input type="number" id="skillpoints" name="skillpoints" min="1" max="20" placeholder="points">
+        Points invested will not be returned, Choose wisely.
+    </form>
 
 
-    </div>
 </div>
 
 {% endblock %}
