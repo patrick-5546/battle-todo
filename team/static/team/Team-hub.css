@@ -97,7 +97,20 @@ html {
 .Team-box .Teammate-card > div {
   text-align: left;
   margin-left: 25px;
+  margin-right: 25px;
   padding-bottom: 20px;
+}
+
+.Team-box .Teammate-card button {
+  text-decoration: none;
+  background: white;
+  color: black;
+  padding: 3px 6px;
+  margin: none;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  float: right;
 }
 
 .Leaderboards {
@@ -120,5 +133,13 @@ html {
 
 .ignore {
   display: contents;
+}
+
+.InvestSkill {
+  margin: 50px;
+}
+
+.InvestSkill * {
+  place-content: center;
 }
 /*# sourceMappingURL=Team-hub.css.map */

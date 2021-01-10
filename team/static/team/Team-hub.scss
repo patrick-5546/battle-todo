@@ -46,6 +46,7 @@ html {
     }
 }
 
+//Box for skill details
 .Skill-info {
     place-self: center;
     width: 100%;
@@ -90,7 +91,20 @@ html {
         & > div {
             text-align: left;
             margin-left: 25px;
+            margin-right: 25px;
             padding-bottom: 20px;
+        }
+
+        & button {
+            text-decoration: none;
+            background: white;
+            color: black;
+            padding: 3px 6px;
+            margin: none;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            float: right;
         }
     }
 }
@@ -115,6 +129,13 @@ html {
 
 .ignore { //class ignored by CSS Grid
     display: contents
+}
+
+.InvestSkill {
+    margin: 50px;
+    & * {
+        place-content: center;
+    }
 }
 
 //Anchor button to scroll to upgrade skills section
