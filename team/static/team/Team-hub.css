@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@600&display=swap");
 body {
   background-color: #EEEEEE;
+  height: 100vh;
   color: white;
   margin: 0;
   font-family: 'Comforta', sans-serif;
@@ -46,6 +47,10 @@ html {
   background: #303030;
 }
 
+.Skill-info h1 {
+  text-align: center;
+}
+
 .Skill-info p, .Skill-info h1, .Skill-info h2 {
   padding: 20px;
   margin: none;
@@ -63,34 +68,35 @@ html {
   -ms-grid-column: span 3;
       grid-column-start: span 3;
   margin-top: 200px;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
 }
 
 .Team-box {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 50px;
   padding: 50px;
 }
 
 .Team-box .Teammate-card {
   background: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
   min-width: 100%;
+  max-width: 100%;
   min-height: 100%;
   max-height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 15%;
+  -webkit-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .Team-box .Teammate-card h1 {
-  margin-left: 2vw;
+  text-align: center;
   font-family: "Open Sans", sans-serif;
+  font-size: 3em;
   border-bottom: 2px solid;
 }
 
@@ -124,6 +130,7 @@ html {
       grid-template-columns: 1fr;
   -ms-grid-rows: 2fr (1fr)[10];
       grid-template-rows: 2fr repeat(10, 1fr);
+  background: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
   border: 3px solid;
   border-color: white;
   padding: 25px;

@@ -61,9 +61,11 @@
 }
 .button {
     background: linear-gradient(45deg, #796fc1 0%, #838beb 100%);
+    text-decoration: none;
     color: white;
     padding: 14px 20px;
-    margin-top: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     border: none;
     cursor: pointer;
     width: 4.5%;
@@ -73,4 +75,14 @@
 .button:hover {
     color: #000000;
     background: rgb(219, 219, 219);
+}
+
+.grow {
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+  }
+  
+  .grow:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }

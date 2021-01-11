@@ -6,22 +6,18 @@
 
 <div class="container">
     <div class="Skill-info">
-        <h1>How Skills Work</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate distinctio delectus autem. Excepturi, ea
-            perspiciatis consequatur qui beatae quis quibusdam laboriosam itaque nam dolorum amet et praesentium numquam
-            perferendis totam harum ex! Odio saepe necessitatibus minima quasi veritatis atque veniam quos, eum quia
-            perspiciatis temporibus, officiis eligendi. Saepe, modi commodi!</p>
-
+        <h1>The Four traits of Battle Todo: </h1>
         <h2>Physical Attack</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, blanditiis.</p>
+        <p>A Character's physical prowess in battle, which is not affected by the opponent's Special Resistance</p>
         <h2>Physical Defense</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, blanditiis.</p>
+        <p>A character's physical resistance against attacks of the same kind, reducing overall damage taken</p>
         <h2>Special Attack</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, blanditiis.</p>
+        <p>A character's special attack, which is not reduced byan opponent's Physical Defense</p>
         <h2>Special Resistance</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, blanditiis.</p>
+        <p>A chracter's Special Resistance, which negates a portion of the damage received from Special Attacks</p>
         <h2>Agility</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, blanditiis.</p>
+        <p>A character's Agilityy is the deciding factor in who strikes first. The character's with the highest Agility
+            stat are able to attack first</p>
     </div>
 
     <div class="Leaderboards">
@@ -38,16 +34,15 @@
         {% endfor %}
     </div>
 
-    <div class="Team-points" style="text-align: center;">
+    <div class="Team-points" style="text-align: center;" data-aos="fade-up">
         <h1> {{ team.team_name }}</h1>
-        <p>Available Points: {{ player.todo_points }}</p>
+        <p>Available Points: {{ team.team_points }}</p>
     </div>
 
     <div class="Team-box">
         <!--Players-->
         {% for player in team_players %}
-        <div class="Teammate-card grow">
-
+        <div class="Teammate-card grow" data-aos="fade-in">
             <div>
                 <h1>{{ player.player_name }}<h1>
             </div>
@@ -57,6 +52,7 @@
             <div>
                 <h3>Todo Points: {{ player.todo_points }}</h3>
             </div>
+
 
             <div>
                 <form action="/team/{{player.pk}}/find/" method="post">{% csrf_token %}
@@ -87,9 +83,9 @@
                     </div>
                     <div class="stat-field">
                         {% if player.player_special_select %}
-                            <p>Current Select: Special Skills</p>
+                        <p>Current Select: Special Skills</p>
                         {% else %}
-                            <p>Current Select: Physical Skills</p>
+                        <p>Current Select: Physical Skills</p>
                         {% endif %}
                         <input type="radio" id="physical" name="select" value="physical" checked>
                         <label for="physical">Physical: </label><br>
