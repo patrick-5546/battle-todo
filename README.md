@@ -1,5 +1,5 @@
 # Battle To-Do
-For nwHacks 2020, we created Battle To-do, a functional to-do list application that additionally serves as a simple but effective multiplayer game. We decided on the Django framework, as we enjoyed learning it at our first hackathon in September, which primarily involves working with Python, HTML and CSS.
+For nwHacks 2020, we created Battle To-do, a functional to-do list application that additionally serves as a simple but effective multiplayer game. We decided on the Django framework, as we enjoyed learning it at our first hackathon in September, which primarily involves working with Python, HTML and CSS. This project earned an honorable mention, ranking it among the top 20% of submissions.
 
 Seeing as how the new year just rang in, we reflected, and I’m sure most of us would agree, that 2020 sucked. Quarantine prevented us from doing all the things we wanted to, but as well, online school was a new experience. What did we learn? We learned that it was super hard to stay motivated. Distractions everywhere. It was a challenge for nearly everyone to stay focused and complete all of their tasks. As a group, we thought, what are some ways to tackle this problem? Through games, and a little extrinsic motivation.
 
